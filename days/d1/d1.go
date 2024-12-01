@@ -2,7 +2,6 @@ package d1
 
 import (
 	"bufio"
-	"fmt"
 	"os"
 	"sort"
 	"strconv"
@@ -54,6 +53,35 @@ func Part1(file *os.File) int {
 }
 
 func Part2(file *os.File) int {
-	fmt.Println("Day 1 part 2!")
-	return 0
+	scanner := bufio.NewScanner(file)
+
+	left := []int{}
+	right := make(map[int]int)
+
+	// create left list
+	// create right map of occurances
+	for scanner.Scan() {
+		words := strings.Fields(scanner.Text())
+
+		i, err := strconv.Atoi(words[0])
+		if err != nil {
+			panic(err)
+		}
+		left = append(left, i)
+
+		i, err = strconv.Atoi(words[1])
+		if err != nil {
+			panic(err)
+		}
+		right[i] += 1
+	}
+
+	score := 0
+	// for each value in the left list, multiply by number of occurances in the right list
+	for _, v := range left {
+		x := v * right[v]
+		score += x
+	}
+
+	return score
 }
