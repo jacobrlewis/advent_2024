@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/jacobrlewis/advent_2024/days/d1"
+	"github.com/jacobrlewis/advent_2024/days/d2"
 )
 
 var day int
@@ -19,7 +20,9 @@ func main() {
 	flag.Parse()
 
 	// get problem to call
-	funcs := [][]func(*os.File) int{{d1.Part1, d1.Part2}}
+	funcs := [][]func(*os.File) int{
+		{d1.Part1, d1.Part2},
+		{d2.Part1, d2.Part2}}
 	problem := funcs[day-1][part-1]
 
 	// get file input
