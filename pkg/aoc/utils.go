@@ -12,12 +12,17 @@ func GetNums(row string) []int {
 	ints := make([]int, len(words))
 
 	for i, v := range words {
-		n, err := strconv.Atoi(v)
-		if err != nil {
-			panic(err)
-		}
-		ints[i] = n
+		ints[i] = StringToInt(v)
 	}
 
 	return ints
+}
+
+// StringToInt converts a string to an int, panics on err
+func StringToInt(s string) int {
+	n, err := strconv.Atoi(s)
+	if err != nil {
+		panic(err)
+	}
+	return n
 }

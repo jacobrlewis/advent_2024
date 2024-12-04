@@ -26,4 +26,4 @@ go.work.sum
 
 # Don't share AoC provided inputs or examples
 **/input.txt
-**/example.txt
+**/example*.txt
