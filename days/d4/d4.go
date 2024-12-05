@@ -39,7 +39,6 @@ func Part1(file *os.File) int {
 	for i, line := range lines {
 		for j, char := range line {
 			if char == 'X' {
-				fmt.Println(i, j)
 
 				rightSafe := j < len(line)-3
 				leftSafe := j >= 3
@@ -90,6 +89,42 @@ func Part1(file *os.File) int {
 	return count
 }
 
+// delete empty line at end of file
 func Part2(file *os.File) int {
-	return 0
+
+	count := 0
+
+	bytes, err := io.ReadAll(bufio.NewReader(file))
+
+	if err != nil {
+		panic(err)
+	}
+
+	// 2D array of chars
+	lines := strings.Split(string(bytes), "\n")
+
+	for i := 1; i < len(lines)-1; i++ {
+		for j := 1; j < len(lines[i])-1; j++ {
+			if lines[i][j] == 'A' {
+				fmt.Println(i, j)
+				// S	or	M
+				//  A		 A
+				//   M		  S
+				sam1 := lines[i-1][j-1] == 'S' && lines[i+1][j+1] == 'M'
+				mas1 := lines[i-1][j-1] == 'M' && lines[i+1][j+1] == 'S'
+
+				//   M	or 	  S
+				//  A		 A
+				// S		M
+				mas2 := lines[i-1][j+1] == 'M' && lines[i+1][j-1] == 'S'
+				sam2 := lines[i-1][j+1] == 'S' && lines[i+1][j-1] == 'M'
+
+				if (mas1 || sam1) && (mas2 || sam2) {
+					count += 1
+				}
+			}
+		}
+	}
+
+	return count
 }
