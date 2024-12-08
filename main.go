@@ -12,6 +12,7 @@ import (
 	"github.com/jacobrlewis/advent_2024/days/d5"
 	"github.com/jacobrlewis/advent_2024/days/d6"
 	"github.com/jacobrlewis/advent_2024/days/d7"
+	"github.com/jacobrlewis/advent_2024/days/d8"
 )
 
 var day int
@@ -34,7 +35,8 @@ func main() {
 		{d4.Part1, d4.Part2},
 		{d5.Part1, d5.Part2},
 		{d6.Part1, d6.Part2},
-		{d7.Part1, d7.Part2}}
+		{d7.Part1, d7.Part2},
+		{d8.Part1, d8.Part2}}
 	problem := funcs[day-1][part-1]
 
 	// get file input
