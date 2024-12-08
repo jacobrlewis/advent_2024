@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// GetNums returns a slice of ints from a row of numbers
+// GetNums returns a slice of ints from a row of numbers split by whitespace
 func GetNums(row string) []int {
 	words := strings.Fields(row)
 
