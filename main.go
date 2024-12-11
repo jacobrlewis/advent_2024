@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/jacobrlewis/advent_2024/days/d1"
+	"github.com/jacobrlewis/advent_2024/days/d10"
 	"github.com/jacobrlewis/advent_2024/days/d2"
 	"github.com/jacobrlewis/advent_2024/days/d3"
 	"github.com/jacobrlewis/advent_2024/days/d4"
@@ -38,7 +39,8 @@ func main() {
 		{d6.Part1, d6.Part2},
 		{d7.Part1, d7.Part2},
 		{d8.Part1, d8.Part2},
-		{d9.Part1, d9.Part2}}
+		{d9.Part1, d9.Part2},
+		{d10.Part1, d10.Part2}}
 	problem := funcs[day-1][part-1]
 
 	// get file input

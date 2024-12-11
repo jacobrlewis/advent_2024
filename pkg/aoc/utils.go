@@ -1,6 +1,9 @@
 package aoc
 
 import (
+	"bufio"
+	"io"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -25,4 +28,20 @@ func StringToInt(s string) int {
 		panic(err)
 	}
 	return n
+}
+
+func Get2DRunes(file *os.File) [][]rune {
+	bytes, err := io.ReadAll(bufio.NewReader(file))
+
+	if err != nil {
+		panic(err)
+	}
+
+	// 2D array of runes
+	lines := strings.Split(string(bytes), "\n")
+	runes := make([][]rune, len(lines))
+	for i, line := range lines {
+		runes[i] = []rune(line)
+	}
+	return runes
 }

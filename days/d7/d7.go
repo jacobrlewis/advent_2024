@@ -46,7 +46,7 @@ func solveLineAddMultiply(total int, nums []int) int {
 				return 0
 			}
 
-			if operators[j] == operation(Concat) {
+			if operators[j] == operation(Mul) {
 				// flip 1 to 0 as long as possible (carrying the 1)
 				operators[j] = operation(Add)
 				continue
