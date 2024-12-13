@@ -8,6 +8,7 @@ import (
 	"github.com/jacobrlewis/advent_2024/days/d1"
 	"github.com/jacobrlewis/advent_2024/days/d10"
 	"github.com/jacobrlewis/advent_2024/days/d11"
+	"github.com/jacobrlewis/advent_2024/days/d12"
 	"github.com/jacobrlewis/advent_2024/days/d2"
 	"github.com/jacobrlewis/advent_2024/days/d3"
 	"github.com/jacobrlewis/advent_2024/days/d4"
@@ -27,6 +28,7 @@ func main() {
 	flag.IntVar(&day, "d", 1, "Day (integer) to run")
 	flag.IntVar(&part, "p", 1, "Part (integer) to run (1 or 2)")
 	flag.BoolVar(&example, "example", false, "If given, uses example input file")
+	flag.BoolVar(&example, "e", false, "If given, uses example input file")
 	flag.StringVar(&customFile, "file", "", "If given uses this file name + .txt")
 	flag.Parse()
 
@@ -42,7 +44,8 @@ func main() {
 		{d8.Part1, d8.Part2},
 		{d9.Part1, d9.Part2},
 		{d10.Part1, d10.Part2},
-		{d11.Part1, d11.Part2}}
+		{d11.Part1, d11.Part2},
+		{d12.Part1, d12.Part2}}
 	problem := funcs[day-1][part-1]
 
 	// get file input

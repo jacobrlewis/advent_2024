@@ -45,3 +45,12 @@ func Get2DRunes(file *os.File) [][]rune {
 	}
 	return runes
 }
+
+type Direction int
+
+const (
+	North Direction = iota
+	East
+	South
+	West
+)
