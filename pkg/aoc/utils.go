@@ -54,3 +54,11 @@ const (
 	South
 	West
 )
+
+// GCD returns the greatest common divisor of 2 integers
+func GCD(a int, b int) int {
+	for b != 0 {
+		a, b = b, a%b
+	}
+	return a
+}
