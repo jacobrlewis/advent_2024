@@ -11,6 +11,7 @@ import (
 	"github.com/jacobrlewis/advent_2024/days/d12"
 	"github.com/jacobrlewis/advent_2024/days/d13"
 	"github.com/jacobrlewis/advent_2024/days/d14"
+	"github.com/jacobrlewis/advent_2024/days/d15"
 	"github.com/jacobrlewis/advent_2024/days/d2"
 	"github.com/jacobrlewis/advent_2024/days/d3"
 	"github.com/jacobrlewis/advent_2024/days/d4"
@@ -49,7 +50,9 @@ func main() {
 		{d11.Part1, d11.Part2},
 		{d12.Part1, d12.Part2},
 		{d13.Part1, d13.Part2},
-		{d14.Part1, d14.Part2}}
+		{d14.Part1, d14.Part2},
+		{d15.Part1, d15.Part2},
+	}
 	problem := funcs[day-1][part-1]
 
 	// get file input
