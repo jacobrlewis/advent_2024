@@ -13,6 +13,7 @@ import (
 	"github.com/jacobrlewis/advent_2024/days/d14"
 	"github.com/jacobrlewis/advent_2024/days/d15"
 	"github.com/jacobrlewis/advent_2024/days/d16"
+	"github.com/jacobrlewis/advent_2024/days/d17"
 	"github.com/jacobrlewis/advent_2024/days/d2"
 	"github.com/jacobrlewis/advent_2024/days/d3"
 	"github.com/jacobrlewis/advent_2024/days/d4"
@@ -54,6 +55,7 @@ func main() {
 		{d14.Part1, d14.Part2},
 		{d15.Part1, d15.Part2},
 		{d16.Part1, d16.Part2},
+		{d17.Part1, d17.Part2},
 	}
 	problem := funcs[day-1][part-1]
 
