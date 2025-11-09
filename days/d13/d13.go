@@ -107,5 +107,32 @@ func Part1(file *os.File) int {
 func Part2(file *os.File) int {
 	total := 0
 
+	machines := ReadMachines(file)
+
+	for _, m := range machines {
+		m.PrizeX += 10000000000000
+		m.PrizeY += 10000000000000
+
+		// solve with Cramer's Rule
+		ax, ay, bx, by, px, py := float64(m.Ax), float64(m.Ay),
+			float64(m.Bx), float64(m.By),
+			float64(m.PrizeX), float64(m.PrizeY)
+
+		det := ax*by - ay*bx
+		if det == 0.0 {
+			// 0 determinate, cannot find solution
+			continue
+		}
+		NA := (px*by - py*bx) / det
+		NB := (ax*py - ay*px) / det
+
+		if NA != float64(int(NA)) || NB != float64(int(NB)) {
+			// non integer solution
+			continue
+		}
+
+		total += int(NA)*3 + int(NB)
+	}
+
 	return total
 }
